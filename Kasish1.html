@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kasish ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            display: none;
+        }
+        .quote, .bear, .message, .final-question {
+            display: none;
+        }
+        h1, p {
+            color: white;
+        }
+        .quote h1 {
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+        .bear img {
+            width: 150px;
+            animation: bounce 2s infinite;
+        }
+        .message button, .final-question button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: #ff6f61;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        .message button:hover, .final-question button:hover {
+            background-color: #e55a4f;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Quote Section -->
+        <div class="quote">
+            <h1>"Every day with you feels like Valentine's Day."</h1>
+        </div>
+
+        <!-- Teddy Bear Section -->
+        <div class="bear">
+           <img src="https://i.imgur.com/JuKwxnF.png" alt="Teddy Bear">
+            <p>Here's a little teddy just for you! ❤️</p>
+        </div>
+
+        <!-- Message Button -->
+        <div class="message">
+            <p>Open the message below to see something special...</p>
+            <button onclick="revealFinalQuestion()">Open Message</button>
+        </div>
+
+        <!-- Final Question -->
+        <div class="final-question">
+            <h1>Hi Kasish,</h1>
+            <p>You make my world brighter and my heart happier every day.</p>
+            <h2>Will you be my Valentine? ❤️</h2>
+            <p>- With love, Anurag</p>
+            <button onclick="alert('Yay! I\'m so happy you said yes! ❤️')">Yes</button>
+        </div>
+    </div>
+
+    <script>
+        // Start Animation Sequence
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector('.container');
+            const quote = document.querySelector('.quote');
+            const bear = document.querySelector('.bear');
+            const message = document.querySelector('.message');
+
+            container.style.display = 'block';
+
+            // Step 1: Show Quote
+            setTimeout(() => {
+                quote.style.display = 'block';
+            }, 1000);
+
+            // Step 2: Show Teddy Bear
+            setTimeout(() => {
+                quote.style.display = 'none';
+                bear.style.display = 'block';
+            }, 5000);
+
+            // Step 3: Show Message Button
+            setTimeout(() => {
+                bear.style.display = 'none';
+                message.style.display = 'block';
+            }, 9000);
+        });
+
+        // Reveal Final Question
+        function revealFinalQuestion() {
+            const message = document.querySelector('.message');
+            const finalQuestion = document.querySelector('.final-question');
+
+            message.style.display = 'none';
+            finalQuestion.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
